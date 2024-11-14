@@ -43,12 +43,12 @@ This is an Account Opening Application project built with **Spring Boot**. The a
 
 
 ### Technologies Used
-**Spring Boot:** Core framework for the application.
-**Hibernate:** ORM for entity management.
-**Spring Data JPA:** Simplified data access with JPA.
-**H2 Database:** Database for storage.
-**Lombok:** Reduces boilerplate code for entity classes.
-**SLF4J:** Logging framework.
+- **Spring Boot:** Core framework for the application.
+- **Hibernate:** ORM for entity management.
+- **Spring Data JPA:** Simplified data access with JPA.
+- **H2 Database:** Database for storage.
+- **Lombok:** Reduces boilerplate code for entity classes.
+- **SLF4J:** Logging framework.
 
 ### Database Structure
 The application has three main entities: **Customer**, **Account**, and **TransactionHistory**.
@@ -58,21 +58,39 @@ The application has three main entities: **Customer**, **Account**, and **Transa
 **TransactionHistory:** Logs transactions for each account.
 
 ### Key Functionalities
-**Account Creation:** Allows customers to open new accounts.
-**Transaction Management:** Handles deposits, withdrawals, and keeps a record of each transaction.
-**Pagination:** Supports efficient retrieval of transactions with pagination to handle large data volumes.
+**Current-Account Creation:** Allows customers to open new accounts.
+**Customer Details Retrieval:** Fetch details by ``customerId`` operations
+**Pagination:** Supports efficient retrieval of account transactions with pagination to handle large data volumes.
 
-Running the Project
-To run the project, use the command:
+### Running the Project
+- To run the project, use the command:
+   ```bash
+   mvn spring-boot:run
 
+###  Configure the H2 Database
+- **Database Connection parameters**
+   ```bash
+   server.servlet.context-path=/account-opening
+   spring.datasource.url=jdbc:h2:mem:testdb
+   spring.datasource.driver-class-name=org.h2.Driver
+   spring.datasource.username=sa
+   spring.datasource.password=sa
+   
+- **H2 Database Login URL**
+   ``http://localhost:8080/account-opening/h2-console``
 
 ### Swagger Documentation
-1. You can explore the API documentation using Swagger by going to:
+- You can explore the API documentation using Swagger by going to:
    ```bash
    http://localhost:8080/account-opening/swagger-ui/index.html#/
 
-###Future Enhancements
-**Improved Caching:** Implement caching for frequently accessed data to improve performance.
-**Enhanced Security:** Add authentication and authorization.
-**Transaction History Search:** Enable searching transactions by date or amount.
+### Future Enhancements
+- **Improved Caching:** Implement caching for frequently accessed data to improve performance.
+- **Enhanced Security:** Add authentication and authorization.
+- **Transaction History Search:** Enable searching transactions by date or amount.
 
+### Testing APIs
+- Run the application on port **8080.**
+- Get an Existing Customer ``id`` from the ``Customer`` Table, from H2 Database.
+- Test All Endpoints.
+3. Call the Endpoint.
