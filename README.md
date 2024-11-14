@@ -92,5 +92,4 @@ The application has three main entities: **Customer**, **Account**, and **Transa
 ### Testing APIs
 - Run the application on port **8080.**
 - Get an Existing Customer ``id`` from the ``Customer`` Table, from H2 Database.
-- Test All Endpoints.
-3. Call the Endpoint.
+- Invoke All Endpoints.
