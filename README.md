@@ -88,6 +88,7 @@ The application has three main entities: **Customer**, **Account**, and **Transa
 - **Improved Caching:** Implement caching for frequently accessed data to improve performance.
 - **Enhanced Security:** Add authentication and authorization.
 - **Transaction History Search:** Enable searching transactions by date or amount.
+- **Containerization & Orchestration:** Dockerize with ``Docker`` and ochestrate with ``kubernetes``.
 
 ### Testing APIs
 - Run the application on port **8080.**
