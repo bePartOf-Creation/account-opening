@@ -53,14 +53,14 @@ This is an Account Opening Application project built with **Spring Boot**. The a
 ### Database Structure
 The application has three main entities: **Customer**, **Account**, and **TransactionHistory**.
 
-**Customer:** Represents each user with accounts and personal details.
-**Account:** Represents an account for each customer, including types (e.g., savings, current) and balances.
-**TransactionHistory:** Logs transactions for each account.
+- **Customer:** Represents each user with accounts and personal details.
+- **Account:** Represents an account for each customer, including types (e.g., savings, current) and balances.
+- **TransactionHistory:** Logs transactions for each account.
 
 ### Key Functionalities
-**Current-Account Creation:** Allows customers to open new accounts.
-**Customer Details Retrieval:** Fetch details by ``customerId`` operations
-**Pagination:** Supports efficient retrieval of account transactions with pagination to handle large data volumes.
+- **Current-Account Creation:** Allows customers to open new accounts.
+- **Customer Details Retrieval:** Fetch details by ``customerId`` operations
+- **Pagination:** Supports efficient retrieval of account transactions with pagination to handle large data volumes.
 
 ### Running the Project
 - To run the project, use the command:
