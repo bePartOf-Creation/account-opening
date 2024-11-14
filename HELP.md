@@ -58,16 +58,31 @@ The application has three main entities: **Customer**, **Account**, and **Transa
 **TransactionHistory:** Logs transactions for each account.
 
 ### Key Functionalities
-**Account Creation:** Allows customers to open new accounts.
-**Transaction Management:** Handles deposits, withdrawals, and keeps a record of each transaction.
-**Pagination:** Supports efficient retrieval of transactions with pagination to handle large data volumes.
+**Current-Account Creation:** Allows customers to open new accounts.
+**Customer Details Retrieval:** Fetch details by ``customerId`` operations
+**Pagination:** Supports efficient retrieval of account transactions with pagination to handle large data volumes.
 
-Running the Project
-To run the project, use the command:
+### Running the Project
+- To run the project, use the command:
+   ```bash
+   mvn spring-boot:run
+
+###  Configure the H2 Database
+- **Database Connection parameters**
+   ```bash
+   server.servlet.context-path=/account-opening
+   spring.datasource.url=jdbc:h2:mem:testdb
+   spring.datasource.driver-class-name=org.h2.Driver
+   spring.datasource.username=sa
+   spring.datasource.password=sa
+   
+- **H2 Database Login URL**
+   ``http://localhost:8080/account-opening/h2-console``
+
 
 
 ### Swagger Documentation
-1. You can explore the API documentation using Swagger by going to:
+- You can explore the API documentation using Swagger by going to:
    ```bash
    http://localhost:8080/account-opening/swagger-ui/index.html#/
 
@@ -76,3 +91,7 @@ To run the project, use the command:
 **Enhanced Security:** Add authentication and authorization.
 **Transaction History Search:** Enable searching transactions by date or amount.
 
+###  Testing APIs
+1. Run the application on port **8080.**
+2. Get an Existing Customer **id** from the **Customer** Table, from H2 Database.
+3. Call the Endpoint.
