@@ -1,6 +1,6 @@
 package com.accountopeningapplication.exception;
 
-import com.accountopeningapplication.exception.dtos.response.BaseResponse;
+import com.accountopeningapplication.dtos.response.BaseResponse;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 

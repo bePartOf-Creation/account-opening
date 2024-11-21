@@ -1,7 +1,7 @@
 package com.accountopeningapplication.controllers;
 
-import com.accountopeningapplication.exception.dtos.requests.CurrentAccountDTO;
-import com.accountopeningapplication.exception.dtos.response.BaseResponse;
+import com.accountopeningapplication.dtos.requests.CurrentAccountDTO;
+import com.accountopeningapplication.dtos.response.BaseResponse;
 import com.accountopeningapplication.services.account.AccountService;
 import com.accountopeningapplication.services.customer.CustomerService;
 import io.swagger.v3.oas.annotations.Operation;

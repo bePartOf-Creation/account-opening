@@ -1,4 +1,4 @@
-package com.accountopeningapplication.exception.dtos.response;
+package com.accountopeningapplication.dtos.response;
 
 import lombok.Getter;
 import lombok.Setter;

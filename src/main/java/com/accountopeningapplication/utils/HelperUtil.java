@@ -4,6 +4,7 @@ import java.security.SecureRandom;
 import java.util.Random;
 
 public class HelperUtil {
+
     public static String generateRandomNumber(int length) {
         StringBuilder result = new StringBuilder();
         String characters = "2213456789";

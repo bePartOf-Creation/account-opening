@@ -1,7 +1,7 @@
 package com.accountopeningapplication.services.customer;
 
-import com.accountopeningapplication.exception.dtos.response.BaseResponse;
-import com.accountopeningapplication.exception.dtos.response.CustomerDetailsDTO;
+import com.accountopeningapplication.dtos.response.BaseResponse;
+import com.accountopeningapplication.dtos.response.CustomerDetailsDTO;
 import com.accountopeningapplication.exception.GeneralException;
 import com.accountopeningapplication.exception.ResourceNotFoundException;
 import com.accountopeningapplication.repositories.CustomerRepository;

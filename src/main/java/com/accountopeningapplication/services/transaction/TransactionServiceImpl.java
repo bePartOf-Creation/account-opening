@@ -1,8 +1,8 @@
 package com.accountopeningapplication.services.transaction;
 
 import com.accountopeningapplication.config.AccountOpeningConfigProperties;
-import com.accountopeningapplication.exception.dtos.response.PaginatedTransactionDTO;
-import com.accountopeningapplication.exception.dtos.response.TransactionDetailsDTO;
+import com.accountopeningapplication.dtos.response.PaginatedTransactionDTO;
+import com.accountopeningapplication.dtos.response.TransactionDetailsDTO;
 import com.accountopeningapplication.entities.Account;
 import com.accountopeningapplication.entities.Transaction;
 import com.accountopeningapplication.enums.Action;
@@ -22,6 +22,7 @@ import java.math.BigDecimal;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static com.accountopeningapplication.utils.builders.Builder.buildTransaction;
 import static com.accountopeningapplication.utils.builders.Builder.paginatedTransactions;
 import static com.accountopeningapplication.utils.constants.StringValues.TRANSACTION_CREATION_ERROR;
 import static com.accountopeningapplication.utils.constants.StringValues.TRANSACTION_RETRIEVAL_ERROR;
@@ -40,17 +41,10 @@ public class TransactionServiceImpl implements TransactionService {
                                             Double initialCreditBalance, String description) {
         Transaction newTransaction = null;
         try {
-            String reference = HelperUtil.getTxRef("TRX:::");
-
-            newTransaction = new Transaction();
-            newTransaction.setAccount(newCurrentAccount);
-            newTransaction.setAction(Action.FUND_WALLET);
-            newTransaction.setAmount(BigDecimal.valueOf(initialCreditBalance));
-            newTransaction.setDescription(description);
-            newTransaction.setStatus("Successful");
-            newTransaction.setReference(reference);
-            newTransaction.setBalance(BigDecimal.valueOf(initialCreditBalance));
-            newTransaction.setCustomerId(customerId);
+            newTransaction = buildTransaction(
+                    newCurrentAccount, customerId,
+                    initialCreditBalance, description
+            );
             return this.transactionHistoryRepo.save(newTransaction);
         } catch (ResourceCreationException exception) {
             log.debug(TRANSACTION_CREATION_ERROR, exception.getMessage());
@@ -58,6 +52,7 @@ public class TransactionServiceImpl implements TransactionService {
         }
         return newTransaction;
     }
+
 
     @Override
     public PaginatedTransactionDTO fetchAllTransactionsByUserAccount(Account account) {
@@ -82,7 +77,7 @@ public class TransactionServiceImpl implements TransactionService {
             log.error(TRANSACTION_RETRIEVAL_ERROR, exception.getMessage());
         }
 
-      return paginatedTransactions;
+        return paginatedTransactions;
     }
 
 

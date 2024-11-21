@@ -1,9 +1,10 @@
 package com.accountopeningapplication.services.account;
 
-import com.accountopeningapplication.exception.dtos.requests.CurrentAccountDTO;
-import com.accountopeningapplication.exception.dtos.response.BaseResponse;
+import com.accountopeningapplication.dtos.requests.CurrentAccountDTO;
+import com.accountopeningapplication.dtos.response.BaseResponse;
 import com.accountopeningapplication.entities.Account;
 import com.accountopeningapplication.exception.GeneralException;
+import com.accountopeningapplication.exception.ResourceCreationException;
 import com.accountopeningapplication.exception.ResourceNotFoundException;
 import com.accountopeningapplication.repositories.AccountRepository;
 import com.accountopeningapplication.repositories.CustomerRepository;
@@ -58,7 +59,7 @@ public class AccountServiceImpl implements AccountService {
                 foundCustomer.getAccounts().add(savedAccount);
                 this.accountRepo.save(savedAccount);
             }
-        } catch (GeneralException exception) {
+        } catch (ResourceCreationException exception) {
             log.debug(ACCOUNT_OPENING_ERROR, exception.getMessage());
             log.error(ACCOUNT_OPENING_ERROR, exception.getMessage());
         }

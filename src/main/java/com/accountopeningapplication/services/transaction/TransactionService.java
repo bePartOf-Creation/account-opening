@@ -1,6 +1,6 @@
 package com.accountopeningapplication.services.transaction;
 
-import com.accountopeningapplication.exception.dtos.response.PaginatedTransactionDTO;
+import com.accountopeningapplication.dtos.response.PaginatedTransactionDTO;
 import com.accountopeningapplication.entities.Account;
 import com.accountopeningapplication.entities.Transaction;
 
